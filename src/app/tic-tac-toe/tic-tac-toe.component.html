@@ -1,0 +1,13 @@
+<div class="game" [style.--board-size]="boardSize">
+  <div class="status">
+    {{ getStatusMessage() }}
+    <button class="reset-button" (click)="resetGame()">reset game</button>
+  </div>
+  <div class="board">
+    <div *ngFor="let box of board; let i = index">
+      <button class="cell" (click)="handleClick(i)" [disabled]="box != null">
+        {{ box }}
+      </button>
+    </div>
+  </div>
+</div>
